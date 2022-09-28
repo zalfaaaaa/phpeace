@@ -1,0 +1,7 @@
+apa itu :
+
+    a constructor
+        constructor adalah method khusus yang akan dijalankan secara otomatis pada saat sebuah objek dibuat (instansiasi), yaitu ketika perintah “new” dijalankan. biasa digunakan untuk membuat proses awal dalam mempersiapkan objek. dibuat menggunakan method __construct().
+
+    b destructor
+        method khusus yang dijalankan secara otomatis pada saat sebuah objek dihapus. biasanya dipakai untuk membersihkan beberapa variabel, atau menjalankan proses tertentu sebelum objek dihapus. dibuat menggunakan method __destruct().
