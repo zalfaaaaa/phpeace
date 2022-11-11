@@ -11,10 +11,10 @@ if(!isset($_SESSION['username'])){
     header("location:login.php");
 } 
 
-if(isset($_GET['caper'])){
-    $z = $_GET['caper'];
-    $result =mysqli_query($db,"SELECT * FROM moaorder ORDER BY `$z` DESC");
-  }
+if(isset($_GET['search'])){
+  $search = $_GET['search'];
+  $result = $db->query("SELECT * FROM moaorder WHERE namapemesan LIKE '%$search%'");
+}
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +51,23 @@ if(isset($_GET['caper'])){
               </li>
             </ul>
         </nav>
-        <div class="container mt-5">
+        <div class="container mt-5 text-center">
+          <h1>Hi <?=  $_SESSION['username'];?>, Selamat Bekerja di Cashier!</h1>
+        </div>
+        <div class="container mt-4">
+            <form action="">
+              <div class="row">
+                <div class="col-auto">
+                  <input type="text" name="search" class="form-control">
+                </div>
+                <div class="col-auto">
+                  <button type="submit"class="btn btn text-white" style="background:#00a6bf;">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- <div class="container mt-5">
         <div class="row fw-bold">
           <form>
             <div class="row">  
@@ -75,7 +91,7 @@ if(isset($_GET['caper'])){
           </form>
         </div>
       </div>
-</div>
+</div> -->
         <div class="container mt-5 mb-5 table-responsive">
         <div class="d-grip gap-2 col-12">
     <table class="table table-light table-hover text-center table-borderless">

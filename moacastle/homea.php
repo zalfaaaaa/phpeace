@@ -45,6 +45,9 @@ if(!isset($_SESSION['username'])){
               </li>
             </ul>
         </nav>
+        <div class="container mt-5 text-center">
+          <h1>Customer Datail<img src="wkuromi.png" class="img-fluid" width="100px" alt=""></h1>
+        </div>
         <div class="container mt-5 table-responsive">
         <div class="d-grip gap-2 col-12">
     <table class="table table-hover text-center table-borderless">

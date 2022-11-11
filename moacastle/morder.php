@@ -12,5 +12,5 @@ $k = new PDO('mysql:host=localhost;dbname=moac','root','');
 $query = $k->query("INSERT INTO `moaorder` VALUES ('','$ci','$co','$jumlah','$namsan','$email','$tlp','$tipka','waiting')");
 
 if($query){
-    header('location:homeu.php');
+    header('location:history.php');
 }

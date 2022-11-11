@@ -47,7 +47,7 @@ $data = $query->fetch();
             </div>
             <div class="mb-3 mt-3 px-3">
               Quantity : <br>
-              <input type="number" name="qty" class="form-control" value="<?= $data['qty']?>">
+              <input type="text" name="qty" class="form-control" value="<?= $data['qty']?>">
             </div>
             <div class="mb-3 mt-3 px-3">
               <button class="btn btn-success">Update</button>

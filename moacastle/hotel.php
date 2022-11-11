@@ -10,9 +10,13 @@ if(!isset($_SESSION['username'])){
   header("location:login.php");
 } 
 
-if(isset($_GET['caper'])){
-  $z = $_GET['caper'];
-  $result =mysqli_query($db,"SELECT * FROM moaoutel ORDER BY `$z` DESC");
+// if(isset($_GET['caper'])){
+//   $z = $_GET['caper'];
+//   $result =mysqli_query($db,"SELECT * FROM moaoutel ORDER BY `$z` DESC");
+// }
+if(isset($_GET['search'])){
+  $search = $_GET['search'];
+  $result = $db->query("SELECT * FROM moaoutel WHERE facilityname LIKE '%$search%'");
 }
 ?>
 <!DOCTYPE html>
@@ -57,8 +61,21 @@ if(isset($_GET['caper'])){
               </li>
             </ul>
         </nav>
-        <h1 class="text-center mt-5">Hotel Facility</h1><br>
-        <div class="container mt-3">
+        <h1 class="text-center mt-5">Hotel Facility<img src="wkuromi.png" class="img-fluid" width="100px" alt=""></h1><br>
+        <div class="container mt-4">
+            <form action="">
+              <div class="row">
+                <div class="col-auto">
+                  <input type="text" name="search" placeholder="search" class="form-control">
+                </div>
+                <div class="col-auto">
+                  <button type="submit"class="btn btn text-white" style="background:#00a6bf;">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- <div class="container mt-3">
         <div class="row fw-bold">
           <form>
             <div class="row">  
@@ -81,7 +98,7 @@ if(isset($_GET['caper'])){
           </form>
         </div>
       </div>
-</div>
+</div> -->
         <div class="container mt-5 table-responsive text-center">
         <div class="d-grip gap-2 col-12">
         <table class="table table-hover table-responsive mb-5">
